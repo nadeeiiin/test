@@ -1,16 +1,21 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
+
 
 def show_cameras_numbers():
     
     # page title
     st.title("Cameras & Numbers")
 
-    # URL of the CSV file
-    url = 'https://github.com/nadeeiiin/test/blob/main/streamlit/test-dataset/df_dashboard-02-time-long-lat.csv'
+    # Setze den absoluten Pfad des aktuellen Verzeichnisses
+    dir = Path(__file__).resolve().parent
+
+    # Pfad zur CSV-Datei 
+    path_to_csv = dir.parent / 'streamlit' / 'test-dataset' / 'df_dashboard-02-time-long-lat.csv'  
 
     # Load the data
-    df = pd.read_csv(url, sep=',', encoding='utf-8')
+    df = pd.read_csv(path_to_csv, sep=',', encoding='utf-8')
 
     # Sicherstellen, dass die 'timestamp'-Spalte als Datetime interpretiert wird
     df['timestamp'] = pd.to_datetime(df['timestamp'])
