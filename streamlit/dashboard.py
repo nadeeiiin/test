@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd
 import pydeck as pdk
 import numpy as np
-import path
+from pathlib import Path
 
 
 
 def show_dashboard():
 
     # Setze den absoluten Pfad des aktuellen Verzeichnisses
-    dir = path.Path(__file__).abspath()
+    dir = Path(__file__).resolve().parent
 
     # Pfad zur CSV-Datei 
     path_to_csv = dir.parent / 'test-dataset' / 'df_dashboard-02-time-long-lat.csv'  
