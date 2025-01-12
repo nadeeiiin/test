@@ -13,6 +13,7 @@ def show_manual_image_upload():
     # Pfad zur CSV-Datei 
     path_to_model = dir.parent / 'streamlit' / 'only_best_model_2025-01-04_11-05-04.pth' 
     
+    labels_file = dir.parent / 'streamlit' / 'labels.txt'
     
     #st.set_option('deprecation.showfileUploaderEncoding', False)
 
@@ -24,7 +25,7 @@ def show_manual_image_upload():
         st.image(image, caption='Uploaded Image.', use_container_width=True)
         st.write("")
         st.write("Just a second...")
-        labels = predict(file_up, path_to_model, "labels.txt") #our trained model and labels
+        labels = predict(file_up, path_to_model, labels_file) #our trained model and labels
 
         # print out the top 5 prediction labels with scores
         for i in labels:
