@@ -2,12 +2,19 @@ import streamlit as st
 import pandas as pd
 import pydeck as pdk
 import numpy as np
+import path
 
 
 
 def show_dashboard():
 
-    df = pd.read_csv('df_dashboard-02-time-long-lat.csv', sep=',', encoding='utf-8')
+    # Setze den absoluten Pfad des aktuellen Verzeichnisses
+    dir = path.Path(__file__).abspath()
+
+    # Pfad zur CSV-Datei 
+    path_to_csv = dir.parent / 'test-dataset' / 'df_dashboard-02-time-long-lat.csv'  
+
+    df = pd.read_csv(path_to_csv, sep=',', encoding='utf-8')
     
     # Konvertiere die Zeitspalte in ein Datum-Zeit-Format
     df['timestamp'] = pd.to_datetime(df['timestamp'])
