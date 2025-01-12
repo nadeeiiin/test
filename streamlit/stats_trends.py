@@ -142,7 +142,7 @@ def show_stats_trends():
     st.subheader("species co-occurrence analysis")
 
     # Load the dataset
-    df = pd.read_csv('./test-dataset/df_dashboard-02-time-long-lat.csv', sep=',', encoding='utf-8')
+    df = pd.read_csv(path_to_csv, sep=',', encoding='utf-8')
 
     # Ensure the 'timestamp' column is in datetime format
     df['timestamp'] = pd.to_datetime(df['timestamp'])
