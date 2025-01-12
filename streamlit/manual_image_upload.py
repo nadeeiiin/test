@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 from clf import predict
+from pathlib import Path
+
 
 def show_manual_image_upload():
     
