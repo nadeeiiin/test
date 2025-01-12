@@ -6,7 +6,11 @@ def show_cameras_numbers():
     # page title
     st.title("Cameras & Numbers")
 
-    df = pd.read_csv('./test-dataset/df_dashboard-02-time-long-lat.csv', sep=',', encoding='utf-8')
+    # URL of the CSV file
+    url = 'https://raw.githubusercontent.com/nadeeiiin/test/refs/heads/main/streamlit/test-dataset/df_dashboard-02-time-long-lat.csv?token=GHSAT0AAAAAACYEHXLEDCIPZN36EFZKQRYQZ4EGUFA'
+
+    # Load the data
+    df = pd.read_csv(url, sep=',', encoding='utf-8')
 
     # Sicherstellen, dass die 'timestamp'-Spalte als Datetime interpretiert wird
     df['timestamp'] = pd.to_datetime(df['timestamp'])

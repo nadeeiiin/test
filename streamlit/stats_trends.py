@@ -7,8 +7,11 @@ from datetime import timedelta
 
 def show_stats_trends():
 
-    #read data
-    df = pd.read_csv('./test-dataset/df_dashboard-02-time-long-lat.csv', sep=',', encoding='utf-8')
+    # URL of the CSV file
+    url = 'https://raw.githubusercontent.com/nadeeiiin/test/refs/heads/main/streamlit/test-dataset/df_dashboard-02-time-long-lat.csv?token=GHSAT0AAAAAACYEHXLEDCIPZN36EFZKQRYQZ4EGUFA'
+
+    # Load the data
+    df = pd.read_csv(url, sep=',', encoding='utf-8')
     
     # page title
     st.title("Stat's & Trends")
