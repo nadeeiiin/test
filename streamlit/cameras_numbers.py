@@ -7,7 +7,7 @@ def show_cameras_numbers():
     st.title("Cameras & Numbers")
 
     # URL of the CSV file
-    url = 'https://raw.githubusercontent.com/nadeeiiin/test/refs/heads/main/streamlit/test-dataset/df_dashboard-02-time-long-lat.csv?token=GHSAT0AAAAAACYEHXLEDCIPZN36EFZKQRYQZ4EGUFA'
+    url = 'https://github.com/nadeeiiin/test/blob/main/streamlit/test-dataset/df_dashboard-02-time-long-lat.csv'
 
     # Load the data
     df = pd.read_csv(url, sep=',', encoding='utf-8')
