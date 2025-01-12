@@ -7,12 +7,7 @@ import numpy as np
 
 def show_dashboard():
 
-    # URL of the CSV file
-    url = 'https://github.com/nadeeiiin/test/blob/main/streamlit/test-dataset/df_dashboard-02-time-long-lat.csv'
-
-
-    # Load the data
-    df = pd.read_csv(url, sep=',', encoding='utf-8')
+    df = pd.read_csv('df_dashboard-02-time-long-lat.csv', sep=',', encoding='utf-8')
     
     # Konvertiere die Zeitspalte in ein Datum-Zeit-Format
     df['timestamp'] = pd.to_datetime(df['timestamp'])
