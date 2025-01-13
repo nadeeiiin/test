@@ -13,7 +13,7 @@ def show_stats_trends():
     dir = Path(__file__).resolve().parent
 
     # Pfad zur CSV-Datei 
-    path_to_csv = dir.parent / 'streamlit' / 'test-dataset' / 'df_dashboard-02-time-long-lat.csv'  
+    path_to_csv = dir.parent / 'test-dataset' / 'df_dashboard-02-time-long-lat.csv'  
     
     # Load the data
     df = pd.read_csv(path_to_csv, sep=',', encoding='utf-8')
